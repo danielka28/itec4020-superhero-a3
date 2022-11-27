@@ -1,0 +1,26 @@
+{{#each results}}
+    <div class="col">
+            <div class="card shadow-sm">
+                <img src = {{images.md}} alt="Hero IMG"/>
+
+                <div class="card-body">
+                <p class="card-text" onclick="location.href='/hero/{{_id}}'" style="color: rgb(9, 107, 163);">{{name}}</p>
+                <p class="card-text">Full name: {{biography.fullName}}</p>
+                <p class="card-text">Power stats: Int:{{powerstats.intelligence}} Str:{{powerstats.strength}} Spe:{{powerstats.speed}} Dur:{{powerstats.durability}} Pow:{{powerstats.power}} Com:{{powerstats.combat}}</p>
+                <p class="card-text">Publisher: {{biography.publisher}}</p>
+                <p class="card-text">Occupation: {{work.occupation}}</p>
+                <p class="card-text">Gender: {{appearance.gender}}/Race: {{appearance.race}}</p>
+                
+                </div>
+            </div>
+    </div>
+{{/each}}
+<nav aria-label="Page navigation example" style="margin-left: 45%;">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="/?pageNum={{previousPage}}">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="/?pageNum=1">First</a></li>
+        <li class="page-item"><a class="page-link">Page: {{pageNum}} / {{pages}}</a></li>
+        <li class="page-item"><a class="page-link" href="/?pageNum={{pages}}">Last</a></li>
+        <li class="page-item"><a class="page-link" href="/?pageNum={{nextPage}}">Next</a></li>
+      </ul>
+    </nav>
